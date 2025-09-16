@@ -1,0 +1,19 @@
+package com.example.demo2;
+
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class CdApplication {
+
+    public static void main(String[] args) {
+        // If you're using XML config, no need to run Spring Boot
+        // springApplication.run(CdApplication.class, args);
+        
+        ClassPathxmlApplication.Context context = new ClassPathXmlAplicationContext("e.xml");
+
+        System.out.println(context.getBean("e1")); // Assuming "e1" is an Employee bean
+
+        context.close(); // Always close the context to free resources
+    }
+}	
+
